@@ -11,7 +11,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```
 ├── skill/                           # 스킬 정의
 │   ├── SKILL.md                     # daily-trend-briefing 메인 스킬
-│   ├── tweet-trend-analyzer-SKILL.md  # 트위터 단독 분석 (참고용)
 │   ├── evals/                       # 스킬 평가 데이터
 │   └── references/                  # 트위터 GraphQL 설정 등 참조 문서
 ```
@@ -23,10 +22,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 # daily-trend-briefing 스킬 설치
 cp -r skill/ ~/.claude/skills/daily-trend-briefing/
-
-# tweet-trend-analyzer 스킬 설치 (선택)
-mkdir -p ~/.claude/skills/tweet-trend-analyzer/
-cp skill/tweet-trend-analyzer-SKILL.md ~/.claude/skills/tweet-trend-analyzer/SKILL.md
 ```
 
 ## 필수 도구

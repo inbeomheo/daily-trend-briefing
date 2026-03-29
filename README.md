@@ -125,7 +125,6 @@ X에서 AI 관련 뭐가 떴어?
 ```
 ├── skill/                           # 스킬 정의
 │   ├── SKILL.md                     # daily-trend-briefing 메인 스킬
-│   ├── tweet-trend-analyzer-SKILL.md  # 트위터 단독 분석 (참고용)
 │   ├── evals/                       # 스킬 평가 데이터
 │   └── references/                  # 트위터 GraphQL 설정 등 참조 문서
 ```
