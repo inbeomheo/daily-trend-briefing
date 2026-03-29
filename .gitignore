@@ -23,3 +23,7 @@ node_modules/
 # Temp
 *.tmp
 *.bak
+
+# 일별 수집 산출물
+trending-*/
+trending-*.md
