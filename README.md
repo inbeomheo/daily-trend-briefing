@@ -34,20 +34,21 @@ trending-2026-03-29/          # 파트별 상세
 trending-2026-03-29.md        # 종합 합본 (교차 분석 + 액션 아이템)
 ```
 
-## 설치
+## 빠른 시작
 
-### 1. 스킬 복사
+### 1. 레포 클론 + 스킬 설치
 
 ```bash
-# daily-trend-briefing 스킬 설치
-cp -r skill/ ~/.claude/skills/daily-trend-briefing/
+git clone https://github.com/inbeomheo/daily-trend-briefing.git
+cd daily-trend-briefing
 
-# tweet-trend-analyzer 스킬 설치 (선택)
-mkdir -p ~/.claude/skills/tweet-trend-analyzer/
-cp skill/tweet-trend-analyzer-SKILL.md ~/.claude/skills/tweet-trend-analyzer/SKILL.md
+# 스킬을 Claude Code 스킬 디렉토리에 복사
+cp -r skill/ ~/.claude/skills/daily-trend-briefing/
 ```
 
-### 2. dev-browser 설치 (X, Reddit, HN, Polymarket 수집용)
+### 2. dev-browser 설치
+
+X, Reddit, Hacker News, Polymarket 수집에 필요합니다.
 
 ```bash
 npm install -g dev-browser
@@ -57,31 +58,31 @@ dev-browser install
 ### 3. Chrome 디버그 프로필 설정 (최초 1회)
 
 ```bash
-# 디버그 프로필로 Chrome 실행
+# Windows
 chrome.exe --remote-debugging-port=9222 --user-data-dir="~/.chrome-debug-profile"
+
+# macOS
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --remote-debugging-port=9222 --user-data-dir="~/.chrome-debug-profile"
+
+# Linux
+google-chrome --remote-debugging-port=9222 --user-data-dir="~/.chrome-debug-profile"
 ```
 
 Chrome이 열리면:
 1. X(트위터)에 로그인
 2. Reddit에서 캡차 1회 통과
 
-이후에는 이 프로필을 재사용하면 됩니다.
+이 프로필은 이후 계속 재사용됩니다.
 
-## 사용법
+### 4. 실행
 
-### Chrome 디버그 프로필 실행
-
-```bash
-chrome.exe --remote-debugging-port=9222 --user-data-dir="~/.chrome-debug-profile"
-```
-
-### Claude Code에서 실행
+Chrome 디버그 프로필을 실행한 상태에서 Claude Code에 입력:
 
 ```
 트렌드 브리핑 해줘
 ```
 
-또는 스킬을 등록했다면:
+또는 슬래시 커맨드:
 
 ```
 /daily-trend-briefing
