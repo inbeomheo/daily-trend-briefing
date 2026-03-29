@@ -1,0 +1,49 @@
+{
+  "skill_name": "daily-trend-briefing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "오늘 트렌드 브리핑 해줘",
+      "expected_output": "4개 소스(GitHub TrendShift, Product Hunt, X/트위터, Reddit) 병렬 수집 → part1~4.md 개별 파일 + 종합 합본 md 생성. 각 파트 동일 상세도, 합본은 크로스 소스 인사이트 + 메가 트렌드 5 + 액션 4 포함.",
+      "files": [],
+      "expectations": [
+        "trending-YYYY-MM-DD 폴더에 part1-github.md 파일 존재",
+        "trending-YYYY-MM-DD 폴더에 part2-producthunt.md 파일 존재",
+        "trending-YYYY-MM-DD 폴더에 part3-twitter.md 파일 존재",
+        "trending-YYYY-MM-DD 폴더에 part4-reddit.md 파일 존재",
+        "trending-YYYY-MM-DD.md 합본 파일 존재",
+        "part1에 GitHub 레포 25개가 동일 형식으로 작성됨 (축약 없음)",
+        "합본에 크로스 소스 인사이트 섹션 존재 (4/3/2/1 소스 교차)",
+        "합본에 메가 트렌드 5개 존재",
+        "합본에 액션 아이템 4개 존재",
+        "4개 파트가 병렬로 수집됨 (Agent 4개 동시 실행)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "GitHub 트렌딩만 분석해줘",
+      "expected_output": "Part 1(GitHub TrendShift)만 실행하여 part1-github.md 생성. 합본은 생성하지 않음. 25개 레포 전부 동일 형식.",
+      "files": [],
+      "expectations": [
+        "part1-github.md 파일 존재",
+        "25개 레포가 동일 형식(한국어 설명, 언어, Stars, Forks, 핵심도, 초보자용, 통찰)으로 작성됨",
+        "합본 파일이 생성되지 않음 (개별 소스만 요청이므로)",
+        "TOP 5만 상세 나머지 테이블 형태가 아님 (축약 금지 규칙 준수)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "요즘 AI 뭐가 핫해? Reddit이랑 트위터 위주로 알려줘",
+      "expected_output": "Part 3(X/트위터) + Part 4(Reddit) 2개 파트 병렬 수집 → part3, part4 개별 파일 + 2-소스 합본 생성.",
+      "files": [],
+      "expectations": [
+        "part3-twitter.md 파일 존재",
+        "part4-reddit.md 파일 존재",
+        "part1-github.md 미생성 (요청하지 않은 소스)",
+        "part2-producthunt.md 미생성 (요청하지 않은 소스)",
+        "합본에 크로스 소스 인사이트 존재 (2개 소스 교차)",
+        "합본에 메가 트렌드와 액션 아이템 포함"
+      ]
+    }
+  ]
+}
